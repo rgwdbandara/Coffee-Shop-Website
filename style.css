@@ -34,6 +34,7 @@
   --site-max-width: 1300px;
 }
 
+/* Styling for whole site*/
 ul {
   list-style: none;
 }
@@ -56,6 +57,23 @@ img {
   margin: 0 auto;
   padding: 0 20px;
   max-width: var(--site-max-width);
+}
+
+.section-title{
+  text-align: center;
+  padding: 60px 0 100px;
+  text-transform: uppercase;
+  font-size: var(--font-size-xl);
+}
+
+.section-title::after{
+  content: "";
+  width: 80px;
+  height: 5px;
+  display: block;
+  margin: 10px auto  0;
+  border-radius: var(--border-radius-s);
+  background: var(--secondary-color);
 }
 
 /* Header */
@@ -175,6 +193,52 @@ header {
   height: auto;
 }
 
+/*About section styling*/
+.about-section{
+  padding: 120px 0;
+  background: var(--light-pink-color);
+}
+
+.about-section .section-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-section .about-image-wrapper .about-image{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius-circle);
+}
+
+.about-section .about-details{
+  max-width:50% ;
+}
+
+.about-section .about-details .title {
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-semi-bold);
+}
+ 
+.about-section .social-link-list{
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.about-section .social-link-list .social-link {
+  color: var(--dark-color);
+  font-size: var(--font-size-l);
+  transition: 0.2s ease;
+}
+
+.about-section .social-link-list .social-link:hover {
+  color: var(--secondary-color);
+}
+
 /* Responsive Media Query */
 @media screen and (max-width: 900px) {
   :root {
@@ -277,10 +341,31 @@ header {
   }
 
   .hero-section .hero-image-wrapper {
-    margin: 0 auto;
+    max-width: 270px;
+    margin-right: 0;
+
   }
 
   .hero-section .hero-image-wrapper .hero-image {
     width: 250px;
   }
+  
+  .about-section .section-content {
+    flex-direction: column;
+    gap: 70px
+  }
+   
+  .about-section .about-image-wrapper .about-image {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    aspect-ratio: 1;;
+  }
+
+  .about-section .about-details {
+    max-width: 100%;
+    
+  }
+
+
 }
