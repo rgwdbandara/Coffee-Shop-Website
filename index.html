@@ -32,6 +32,8 @@
         <li class="nav-item"><a href="#tesimonials" class="nav-link">Testimonials</a></li>
         <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
         <li class="nav-item"><a href="#contact us" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="#order" class="nav-link">Order</a></li>
+        
       </ul>
 
       <!-- Menu open button -->
@@ -233,6 +235,28 @@
       </div>
     </div>
   </section>
+
+  <!-- Order Section -->
+  <section class="order-section" id="order">
+    <div class="container">
+      <h2 class="section-title">Place Your Order</h2>
+      <form class="order-form" id="orderForm">
+        <input type="text" name="custName" placeholder="Your Name" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input type="email" name="email" placeholder="Email (optional)" />
+        <select name="item" required>
+          <option value="">Select Item</option>
+          <option value="Cappuccino">Cappuccino</option>
+          <option value="Latte">Latte</option>
+          <option value="Espresso">Espresso</option>
+          <option value="Mocha">Mocha</option>
+        </select>
+        <input type="number" name="qty" min="1" value="1" required />
+        <button type="submit">Place Order</button>
+        <p id="orderMsg" class="msg"></p>
+      </form>
+    </div>
+  </section>
     
   <!--Footer Section-->
   <footer class="footer-section">
@@ -262,5 +286,54 @@
 
   <!-- JS -->
   <script src="script.js" defer></script>
+
+  <!-- Firebase SDKs -->
+<script type="module">
+  // Import Firebase libraries
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  // 🔐 Your Firebase config goes here
+  const firebaseConfig = {
+    apiKey: "AIzaSyCGtt3uVDFFbZ8Hw-qOoIy9J2tvzPBCpEA",
+    authDomain: "coffee-shop-d7fbd.firebaseapp.com",
+    projectId: "coffee-shop-d7fbd",
+    storageBucket: "coffee-shop-d7fbd.firebasestorage.app",
+    messagingSenderId: "567858140656",
+    appId: "1:567858140656:web:02aa81dd89728616bbb935"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Order form submission
+  const orderForm = document.getElementById("orderForm");
+  const orderMsg = document.getElementById("orderMsg");
+
+  orderForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: orderForm.custName.value,
+      phone: orderForm.phone.value,
+      email: orderForm.email.value,
+      item: orderForm.item.value,
+      qty: parseInt(orderForm.qty.value),
+      timestamp: new Date()
+    };
+
+    try {
+      await addDoc(collection(db, "orders"), data);
+      orderMsg.textContent = "✅ Order placed successfully!";
+      orderMsg.style.color = "green";
+      orderForm.reset();
+    } catch (err) {
+      console.error(err);
+      orderMsg.textContent = "❌ Failed to place order. Try again.";
+      orderMsg.style.color = "red";
+    }
+  });
+</script>
 </body>
 </html>

@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("open");
     });
   }
+  
 
 
 //Initialize Swiper
@@ -53,5 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   }
 
+  
 });
 });
