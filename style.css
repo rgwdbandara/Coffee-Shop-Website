@@ -340,7 +340,35 @@ header {
 .testimonials-section .swiper-slide-button:hover{
   color: var(--primary-color);
 }
+
+/*Gallery Section Style*/
+.gallery-section {
+  padding: 50px 0 100px;
+}
+
+.gallery-section .gallery-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
  
+.gallery-section .gallery-list .gallery-item {
+  overflow: hidden;
+  border-radius: var(--border-radius-m);
+  width: calc(100% /3 - 32px);
+}
+
+.gallery-section .gallery-item .gallery-image{
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  transition: 0.3s ease;
+}
+
+.gallery-section .gallery-item:hover .gallery-image{
+  transform: scale(1.3);
+}
+
 
 
 
@@ -496,13 +524,22 @@ header {
     max-width: 200%;
   }
 
+  .gallery-section .gallery-list{
+    gap: 30px;
+  }
 
+  .gallery-section .gallery-list .gallery-item{
+    width: calc(100% / 2 - 30px);
+  }
+
+/*max width: 640px*/
   @media screen and (max-width: 640px) {
      .menu-section .menu-list  {
       gap: 60px;
     }
     
-    .menu-section .menu-list .menu-item {
+    .menu-section .menu-list .menu-item,
+    .gallery-section .gallery-list .gallery-item {
       width: 100%;
     }
 
