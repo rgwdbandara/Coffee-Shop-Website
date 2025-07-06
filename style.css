@@ -333,12 +333,12 @@ header {
 }
 
 .testimonials-section .swiper-slide-button{
-  color: var(--secondary-color);
+  color: var(--secondary-color); /* Changed from var(--secondary-color) */
   transition: 0.3s ease;
 }
 
 .testimonials-section .swiper-slide-button:hover{
-  color: var(--primary-color);
+  color: var(--secondary-color); /* Changed from var(--primary-color) */
 }
 
 /*Gallery Section Style*/
@@ -368,6 +368,95 @@ header {
 .gallery-section .gallery-item:hover .gallery-image{
   transform: scale(1.3);
 }
+
+
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #faf4f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #3b141c;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 14px;
+  background-color: #f3961c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #3b141c;
+  color: #fff;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 250px;
+  font-size: 1rem;
+}
+
+.contact-details h3 {
+  font-size: 1.4rem;
+  color: #3b141c;
+  margin-bottom: 20px;
+}
+
+.contact-details p {
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.contact-details i {
+  color: #f3961c;
+  margin-right: 10px;
+}
+
 
 
 
@@ -552,6 +641,16 @@ header {
     }
 
    
+  }
+  @media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-details {
+    width: 100%;
   }
 
 }
