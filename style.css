@@ -34,6 +34,10 @@
   --site-max-width: 1300px;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* Styling for whole site*/
 ul {
   list-style: none;
@@ -457,6 +461,65 @@ header {
   margin-right: 10px;
 }
 
+/* Footer Section */
+.footer-section {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-section .section-content {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-section .social-link-list {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-section .social-link {
+  color: var(--white-color);
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-section .social-link:hover {
+  color: var(--secondary-color);
+  transform: scale(1.2);
+}
+
+.footer-section .policy-text {
+  font-size: var(--font-size-s);
+  color: var(--light-pink-color);
+}
+
+.footer-section .policy-link {
+  color: var(--light-pink-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section .policy-link:hover {
+  color: var(--secondary-color);
+}
+
+.footer-section .separator {
+  margin: 0 8px;
+  color: var(--medium-gray-color);
+}
+
+.footer-section .copyright-text {
+  font-size: var(--font-size-s);
+  color: var(--medium-gray-color);
+}
+
 
 
 
@@ -639,7 +702,6 @@ header {
     .testimonials-section .swiper-slide-button {
       display: none;
     }
-
    
   }
   @media (max-width: 768px) {
@@ -653,4 +715,17 @@ header {
     width: 100%;
   }
 
+  }
+
+  /* Responsive Footer */
+@media screen and (max-width: 600px) {
+  .footer-section .social-link-list {
+    justify-content: center;
+  }
+
+  .footer-section .policy-text {
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
+}
 }
