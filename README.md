@@ -82,31 +82,6 @@ const firebaseConfig = {
 
 ---
 
-## 📷 Screenshots
-
-### Home Page
-
-![Home Page](image1)
-
----
-
-### Order Page
-
-![Order Page](image2)
-
----
-
-### About Page
-
-![About Page](image3)
-
----
-
-### Mobile Responsive
-
-![Mobile Responsive](image4)
-
----
 
 ## 📱 Mobile Responsive
 
@@ -114,12 +89,3 @@ The site is fully optimized for mobile devices, ensuring a seamless experience w
 
 ---
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome! Feel free to check [issues page](../../issues).
-
----
-
-## 📄 License
-
-This project is [MIT](LICENSE) licensed.
