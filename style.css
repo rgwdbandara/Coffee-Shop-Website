@@ -80,10 +80,6 @@ img {
   background: var(--secondary-color);
 }
 
-.menu-section .section-title {
-  color: #f3961c; /* Use your preferred color */
-}
-
 /* Header */
 header {
   position: fixed;
@@ -157,7 +153,7 @@ header {
 .title {
   font-size: 48px;
   font-weight: 800;
-  color: #721023; /* Changed from #5c3d2e to the secondary color */
+  color: #721023;
 }
 
 .subtitle {
@@ -221,11 +217,57 @@ header {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/*About section styling*/
+.about-section{
+  padding: 120px 0;
+  background-color: #fffaf3;
+}
+
+.about-section .section-content {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-section .about-image-wrapper .about-image{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius-circle);
+}
+
+.about-section .about-details{
+  max-width:50% ;
+}
+
+.about-section .about-details .title {
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-semi-bold);
+}
+ 
+.about-section .social-link-list{
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.about-section .social-link-list .social-link {
+  color: var(--dark-color);
+  font-size: var(--font-size-l);
+  transition: 0.2s ease;
+}
+
+.about-section .social-link-list .social-link:hover {
+  color: var(--secondary-color);
+}
+
 /* Menu Section */
 
 .menu-section{
   color: var(--white-color);
-  background: #230202;
+  background-color: #570e2f;
   padding: 50px 0 100px;
 }
 
@@ -269,6 +311,10 @@ header {
 .menu-section .menu-list .menu-item .text{
   font-size: var(--font-size-m);
 
+}
+
+.menu-section .section-title {
+  color: white; /* Example: bright yellow, change as desired */
 }
 
 /* Testimonials Section */
@@ -403,7 +449,7 @@ header {
 
 .contact-form button {
   padding: 14px;
-  background-color: #0b0445;
+  background-color: #240658;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -413,7 +459,7 @@ header {
 }
 
 .contact-form button:hover {
-  background-color: #721023;
+  background-color:  #721023;
   color: #fff;
 }
 
@@ -435,7 +481,7 @@ header {
 }
 
 .contact-details i {
-  color: #f3961c;
+  color: #1e1e1e;
   margin-right: 10px;
 }
 
@@ -503,7 +549,7 @@ header {
 .order-form      { max-width:420px; margin:0 auto; display:flex; flex-direction:column; gap:1rem; }
 .order-form input,
 .order-form select{ padding:.8rem 1rem; border:1px solid #ccc; border-radius:4px; }
-.order-form button{ padding:.8rem 1rem; background:#0b0445; color:#721023; border:none; cursor:pointer; }
+.order-form button{ padding:.8rem 1rem; background:#240658; color:#fff; border:none; cursor:pointer; }
 .msg{ margin-top:.5rem; font-weight:600; }
 
 
@@ -673,24 +719,25 @@ header {
 
 /*max width: 640px*/
   @media screen and (max-width: 640px) {
-  .menu-section .menu-list  {
-    gap: 60px;
-  }
-  
-  .menu-section .menu-list .menu-item,
-  .gallery-section .gallery-list .gallery-item {
-    width: 100%;
-  }
+     .menu-section .menu-list  {
+      gap: 60px;
+    }
+    
+    .menu-section .menu-list .menu-item,
+    .gallery-section .gallery-list .gallery-item {
+      width: 100%;
+    }
 
-  .testimonials-section .slider-wrapper {
-    margin: 0 0 30px;
-  }
+    .testimonials-section .slider-wrapper {
+      margin: 0 0 30px;
+    }
 
-  .testimonials-section .swiper-slide-button {
-    display: none;
+    .testimonials-section .swiper-slide-button {
+      display: none;
+    }
+   
   }
-}
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
     align-items: center;
@@ -701,9 +748,9 @@ header {
     width: 100%;
   }
 
-}
+  }
 
-/* Responsive Footer */
+  /* Responsive Footer */
 @media screen and (max-width: 600px) {
   .footer-section .social-link-list {
     justify-content: center;
@@ -713,6 +760,5 @@ header {
     flex-wrap: wrap;
     font-size: 0.85rem;
   }
-}
 }
 }
